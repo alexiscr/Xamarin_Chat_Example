@@ -19,19 +19,20 @@ namespace TheChat.ViewModels
     public class ChatViewModel : FreshBasePageModel
     {
 
+        // Llamado a los servicios
         IChatService ChatService;
         IUserDialogs dialogs;
 
+        // Lista de usuarios a mostrar en el collection view
         public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>();
 
+        // Propiedades del viewmodel
         public string UserName { get; set; }
         public string GroupName { get; set; }
-
         public string Text { get; set; }
-
         public User SelectedUser { get; set; }
 
-        
+        // Observable collection para mostrar los mensajes del chat
         public ObservableCollection<ChatMessage> Messages { get; set; } = new ObservableCollection<ChatMessage>();
 
         public ICommand SendCommand => new Command(async () => {
