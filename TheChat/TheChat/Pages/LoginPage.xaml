@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TheChat.Pages.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             Visual="Material">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="main.jpg"
+               Aspect="AspectFill"/>
+        <Grid Grid.Row="1">
+            <Frame BackgroundColor="White"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   CornerRadius="20"
+                   Margin="0,-20,0,-20"/>
+            <StackLayout>
+                <Label Text="Welcome to The Chat"
+                          FontSize="Title"
+                          HorizontalTextAlignment="Center"
+                          FontAttributes="Bold"
+                          TextColor="Black"/>
+                <Label Text="Please, enter your User Name for Chat Rooms"
+                       FontSize="Medium"
+                       HorizontalTextAlignment="Center"/>
+                <Entry Placeholder="User Name"
+                       Margin="25"
+                       Text="{Binding UserName}"
+                       ReturnCommand="{Binding ConnectCommand}"/>
+                <Button Text="Lest Go!"
+                        Margin="25"
+                        BackgroundColor="DarkOrange"
+                        Command="{Binding ConnectCommand}"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
